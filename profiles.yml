@@ -3,9 +3,4 @@ taxi_rides_ny:
   outputs:
     prod:
       type: bigquery
-      method: service-account
-      project: dtc-de-course-485005
-      dataset: zoomcamp_HW4
-      threads: 4 # Must be a value of 1 or greater
-      keyfile: /Users/artemijskurtenoks/Desktop/Coding/2026-data-engineering-zoomcamp-homeworks/Module 4 - Homework/creds/creds.json
-      OPTIONAL_CONFIG: VALUE
+
