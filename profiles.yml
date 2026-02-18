@@ -1,6 +1,0 @@
-taxi_rides_ny:
-  target: prod
-  outputs:
-    prod:
-      type: bigquery
-
