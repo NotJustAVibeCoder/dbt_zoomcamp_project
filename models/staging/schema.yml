@@ -48,6 +48,31 @@ models:
       - name: payment_type
         description: Payment method code (1=Credit card, 2=Cash, 3=No charge, 4=Dispute, 5=Unknown, 6=Voided)
 
+  - name: stg_fhv_tripdata
+    description: >
+      Staging model for For-Hire Vehicle (FHV) dispatch trip data. Standardizes
+      column names and data types from the raw fhv_tripdata source for downstream
+      transformations and analysis.
+    columns:
+      - name: dispatching_base_number
+        description: Identifier for the dispatching base that arranged the trip
+        data_tests:
+          - not_null
+      - name: pickup_datetime
+        description: Date and time when the vehicle picked up the passenger
+        data_tests:
+          - not_null
+      - name: dropoff_datetime
+        description: Date and time when the vehicle dropped off the passenger
+      - name: pick_up_location_id
+        description: TLC Taxi Zone ID where the passenger was picked up (PUlocationID)
+      - name: drop_off_location_id
+        description: TLC Taxi Zone ID where the passenger was dropped off (DOlocationID)
+      - name: service_request_flag
+        description: Service request or special request flag from dispatch (SR_Flag)
+      - name: affiliated_base_number
+        description: Affiliated base number for the vehicle/operator (if different from dispatching base)
+
   - name: stg_yellow_tripdata
     description: >
       Staging model for yellow taxi trip data. This model standardizes column names
