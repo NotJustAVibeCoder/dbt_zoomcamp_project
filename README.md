@@ -16,6 +16,7 @@ models/
 If you run `dbt run --select int_trips_unioned`, what models will be built?
 
 Answer: stg_green_tripdata, stg_yellow_tripdata, and int_trips_unioned (upstream dependencies)
+
 Because the model depends on upstream models (stg_green_tripdata and stg_yellow_tripdata
 
 ---
@@ -39,6 +40,7 @@ Your model `fct_trips` has been running successfully for months. A new value `6`
 What happens when you run `dbt test --select fct_trips`?
 
 Answer: dbt will fail the test, returning a non-zero exit code
+
 Because the specified test conditions won't match the actual data in the table
 
 
@@ -51,6 +53,7 @@ After running your dbt project, query the `fct_monthly_zone_revenue` model.
 What is the count of records in the `fct_monthly_zone_revenue` model?
 
 Answer: 12,184
+
 Query: 
 
 ```sql
@@ -68,6 +71,7 @@ Using the `fct_monthly_zone_revenue` table, find the pickup zone with the **high
 Which zone had the highest revenue?
 
 Answer: East Harlem North
+
 Query:
 ```sql
 select pickup_zone from dtc-de-course-485005.zoomcamp_HW4.fct_monthly_zone_revenue
@@ -83,6 +87,7 @@ limit 1;
 Using the `fct_monthly_zone_revenue` table, what is the **total number of trips** (`total_monthly_trips`) for Green taxis in October 2019?
 
 Answer: 384,624
+
 Query:
 ```sql
 select SUM(total_monthly_trips) as total_trips from dtc-de-course-485005.zoomcamp_HW4.fct_monthly_zone_revenue
@@ -107,4 +112,8 @@ Answer: 43,244,693
 
 Steps:
 1. dbt build --select stg_fhv_trpidata
-2. select count(*) from dtc-de-course-485005.zoomcamp_HW4.stg_fhv_tripdata
+
+2.
+```sql
+  select count(*) from dtc-de-course-485005.zoomcamp_HW4.stg_fhv_tripdata
+```
