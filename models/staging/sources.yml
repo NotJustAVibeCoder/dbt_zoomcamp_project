@@ -93,3 +93,21 @@ sources:
             description: Improvement surcharge
           - name: total_amount
             description: Total amount charged
+
+      - name: fhv_tripdata
+        description: Raw For-Hire Vehicle (FHV) dispatch trip records
+        columns:
+          - name: dispatching_base_num
+            description: "Identifier for the dispatching base that arranged the trip"
+          - name: pickup_datetime
+            description: "Date and time when the vehicle picked up the passenger (dispatch timestamp)"
+          - name: dropOff_datetime
+            description: "Date and time when the vehicle dropped off the passenger"
+          - name: PUlocationID
+            description: "Pickup location TLC Zone ID (may be null for some dispatch trips)"
+          - name: DOlocationID
+            description: "Dropoff location TLC Zone ID (may be null for some dispatch trips)"
+          - name: SR_Flag
+            description: "Service request flag / special request indicator (when present)"
+          - name: Affiliated_base_number
+            description: "Affiliated base number for the vehicle/operator, when different from dispatching base"
