@@ -5,7 +5,7 @@ with source as (
 renamed as (
     select
         -- identifiers
-        cast(dispatching_base_num as integer) as dispatching_base_number,
+        cast(dispatching_base_num as string) as dispatching_base_number,
 
 
         -- timestamps
@@ -13,10 +13,10 @@ renamed as (
         cast(dropOff_datetime as timestamp) as dropoff_datetime,
 
         -- trip info
-        cast(PUlocationID as string) as pick_up_location_id,
+        cast(PUlocationID as integer) as pick_up_location_id,
         cast(DOlocationID as integer) as drop_off_location_id,
         cast(SR_Flag as string) as service_request_flag,
-        cast(Affiliated_base_number as integer) as affiliated_base_number,
+        cast(Affiliated_base_number as string) as affiliated_base_number,
 
     from source
     -- Filter out records with null dispatching_base_num (data quality requirement)
